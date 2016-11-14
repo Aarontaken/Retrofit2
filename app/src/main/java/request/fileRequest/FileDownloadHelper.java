@@ -18,8 +18,6 @@ import rx.schedulers.Schedulers;
  */
 public class FileDownloadHelper {
 
-    private DownloadListener downloadListener;
-
     public interface DownloadListener {
         void onDownloadStart();
         void onDownloading(int progress);
