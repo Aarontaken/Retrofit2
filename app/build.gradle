@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.aaron.me.retrofit2"
         minSdkVersion 19
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -27,4 +27,7 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.2'
     compile 'com.jakewharton:butterknife:5.1.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'io.reactivex:rxjava:1.2.2'
+    compile 'io.reactivex:rxandroid:1.2.1'
 }

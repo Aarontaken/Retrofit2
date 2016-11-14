@@ -1,7 +1,7 @@
 package module;
 
 /**
- * Created by Aaron on 2016/11/11.
+ * Created by Aaron Wang on 2016/11/11.
  */
 public class WeatherInfo {
 
