@@ -9,7 +9,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 
 /**
- * Created by Aaron on 2016/11/11.
+ * Created by Aaron Wang on 2016/11/11.
  */
 public enum OkHttp {
     INSTANCE;
