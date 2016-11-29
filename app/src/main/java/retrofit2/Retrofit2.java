@@ -11,7 +11,9 @@ public enum Retrofit2 {
     // 可以创建多个INSTANCE,使用不同的baseUrl
     INSTANCE("http://www.weather.com.cn/"),
 
-    PICINSTANCE("http://img4.duitang.com/");
+    DOWNLOAD_INSTANCE("http://img4.duitang.com/"),
+
+    UPLOAD_INSTANCE("http://api.stay4it.com/");
 
     private Retrofit retrofit;
 
