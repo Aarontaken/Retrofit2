@@ -10,7 +10,6 @@ import okhttp3.Cache;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.intercepter.MyCacheInterceptor;
 
 /**
  * Created by Aaron Wang on 2016/11/11.
@@ -29,7 +28,7 @@ public enum OkHttp {
 
         // 添加log信息拦截器
         if (BuildConfig.DEBUG) {
-            builder.addInterceptor(getLoggingInterceptor());
+            builder.addNetworkInterceptor(getLoggingInterceptor());
         }
 
         // 设置超时和错误重连
@@ -42,8 +41,9 @@ public enum OkHttp {
         File cacheFile = new File(AppApplication.getContext().getCacheDir(), "cacheDir");
         builder.cache(new Cache(cacheFile, CACHE_SIZE));
 
-        // 统一设置缓存
-        builder.addInterceptor(new MyCacheInterceptor());
+        // 统一设置缓存, 加上这个对于服务器没有返回缓存响应头信息的数据也能进行离线查看, 对于有缓存响应头的数据不影响, 仍由服务器控制缓存时间
+        // 按理来说缓存应该完全由服务器返回的header来控制, 若服务器不加控制才会采用这种拦截器方式!
+//        builder.addInterceptor(new MyCacheInterceptor());
 
         okHttpClient = builder.build();
     }
